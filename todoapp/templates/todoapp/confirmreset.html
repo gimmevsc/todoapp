@@ -1,0 +1,53 @@
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+<div class="confirmreset-form">
+    <div class="confirmreset-text">
+        <div class="to-doapp-by">
+            TO DOAPP by GIMMEVSC
+        </div>
+        <div class="confirmreset-desc">
+            <div class="reset-pass">
+                Reset your password
+            </div>
+            <div class="confirm-your-email">
+                Confirm your email address and enter a new password
+            </div>
+            <div class="we-sent">
+                We sent a code to your email address
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <form action="" class="confirmreset-form-inp" method="post" novalidate>
+            {% csrf_token %}
+            <div class="input-container">
+                <!-- <label class="wrapper" for="email">Email Address</label> -->
+                <input type="code" class="input{% if errors.code %} input-error{% endif %}" id="code" name="code" required placeholder="Code" value="{{ request.POST.code }}">
+                {% if errors.code %}
+                    <div class="error">{{ errors.code }}</div>
+                {% endif %}
+            </div>
+            <div class="input-container">
+                <!-- <label class="wrapper" for="password">Password</label> -->
+                <input type="password" class="input{% if errors.password %} input-error{% endif %}" id="password" name="password" required placeholder="New password">
+                {% if errors.password %}
+                    <div class="error">{{ errors.password }}</div>
+                {% endif %}
+            </div>
+            <div class="buttons-under-conf">
+                <button class="send-button" type="submit">
+                    <div class="send-text">
+                        Send
+                    </div>
+                </button>
+                <div class="link">
+                    <a href="{% url 'login' %}" class="cancel-button">
+                        <div class="cancel">Cancel</div>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

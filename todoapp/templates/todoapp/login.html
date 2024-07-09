@@ -1,0 +1,58 @@
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+<div class="login-form">
+    <div class="login-text">
+        <div class="to-doapp-by">
+            TO DOAPP by GIMMEVSC
+        </div>
+        <div class="register-desc">
+            <div class="get-start">
+                Welcome back!
+            </div>
+            <div class="create-account">
+                Create your account or Log in
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <form action="" class="login-form" method="post" novalidate>
+            {% csrf_token %}
+            <div class="input-container">
+                <!-- <label class="wrapper" for="email">Email Address</label> -->
+                <input type="email" class="input{% if errors.email %} input-error{% endif %}" id="email" name="email" required placeholder="Email address" value="{{ request.POST.email }}">
+                {% if errors.email %}
+                    <div class="error">{{ errors.email }}</div>
+                {% endif %}
+            </div>
+            <div class="input-container">
+                <!-- <label class="wrapper" for="password">Password</label> -->
+                <input type="password" class="input{% if errors.password %} input-error{% endif %}" id="password" name="password" required placeholder="Password">
+                {% if errors.password %}
+                    <div class="error">{{ errors.password }}</div>
+                {% endif %}
+                <div class="forgot-your-password-n">
+                    <a href="{% url 'passreset' %}" class="forgot-your-password">
+                        Forgot your password?
+                    </a>
+                </div>
+            </div>
+            <button class="login-button" type="submit">
+                <div class="login-text">
+                    Log in
+                </div>
+            </button>
+        </form>
+    </div>
+    <div class="buttons">
+        <div class="dont-have-an-account">
+            Don’t have an account?
+        </div>
+        <div class="link">
+            <a href="{% url 'register' %}" class="register-button">
+                <div class="register">Register</div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

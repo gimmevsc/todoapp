@@ -1,0 +1,43 @@
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+<div class="reset-form">
+    <div class="reset-text">
+        <div class="to-doapp-by">
+            TO DOAPP by GIMMEVSC
+        </div>
+        <div class="reset-desc">
+            <div class="reset">
+                Reset your password
+            </div>
+            <div class="enter-email">
+                Enter your email address to receive a password reset code
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <form action="" class="login-form" method="post" novalidate>
+            {% csrf_token %}
+            <div class="input-container">
+                <!-- <label class="wrapper" for="email">Email Address</label> -->
+                <input type="email" class="input{% if errors.email %} input-error{% endif %}" id="email" name="email" required placeholder="Email address" value="{{ request.POST.email }}">
+                {% if errors.email %}
+                    <div class="error">{{ errors.email }}</div>
+                {% endif %}
+            </div>
+            <div class="buttons-under">
+                <button class="send-button" type="submit">
+                    <div class="send-text">
+                        Send
+                    </div>
+                </button>
+                <div class="link">
+                    <a href="{% url 'login' %}" class="cancel-button">
+                        <div class="cancel">Cancel</div>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

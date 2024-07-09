@@ -1,0 +1,78 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: #dfbd43;;
+            }
+            h2{
+                color: black;
+            }
+            .email-container {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #dfbd43;; /* Light green background */
+                padding: 20px;
+            }
+            
+            .email-content {
+                padding-left: 50px;
+                background-color: #ffffff;
+                padding: 10px;
+            }
+            .email-header {
+                margin-bottom: 50px;
+            }
+            .logo {
+                height: 50px;
+                margin-right: 10px;
+            }
+            .title {
+                font-size: 30px;
+                color: #dfbd43;
+                font-weight: bold;
+            }
+            .email-body {
+                font-weight: bold;
+                font-size: 16px;
+                color: #4e4e4e;
+                margin-bottom: 20px;
+            }
+            .verification-code {
+                font-size: 18px;
+                color: #dfbd43;
+                font-weight: bold;
+            }
+            .footer {
+                font-size: 12px;
+                color: #666666;
+                margin-top: 20px;
+                text-align: center;
+            }
+            .email-description{
+                color: rgb(75, 75, 75);
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="email-container">
+            <div class="email-content">
+                <div class="email-header">
+                    <div class="title">TO DOAPP by GIMMEVSC</div>
+                </div>
+                <h2>{{ email_goal }}</h2>
+                <div class="email-body">
+                    {{ email_main }}: <span class="verification-code">{{ code }}</span>
+                </div>
+                <div class="email-description">
+                    Your code will expire in 5 minutes
+                </div>
+            </div>
+            <div class="footer">
+                &copy; 2024 TO DOAPP by GIMMEVSC. All rights reserved.
+            </div>
+        </div>
+    </body>
+    </html>

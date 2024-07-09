@@ -1,0 +1,86 @@
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="main-page">
+    <div class="avatar">
+        <div class="profile-photo">
+            
+        </div>
+        <div class="hello-message">
+            
+        </div>
+    </div>
+    <div class="to-do-main">
+        <div class="to-doapp-by">
+            TO DOAPP by GIMMEVSC
+        </div>
+        <div class="search">
+            <form action="{% url 'todo_search' %}" class="search-form" method="post" novalidate>
+                {% csrf_token %}
+                <input type="search" class="input{% if errors.search %} input-error{% endif %}" id="search" name="search" required placeholder="Search" value="{{ request.POST.search }}">
+            </form>
+        </div>
+        <div class="todos">
+            <div class="todoitems">
+                {% for item in items %}
+                <div class="dotoitem">
+                    <div class="checkbox">
+                        <form method="POST" action="{% url 'doneToDo' item.todo_id %}">
+                        {% csrf_token %}
+                            <button type="submit" class="done-button">
+                                <img src="{% static 'todoapp/img/' %}{% if item.is_done %}done.png{% else %}not_done.svg{% endif %}" alt="done" class="done-button">
+                            </button>
+                        </form>
+                    </div>
+                    <div class="content">
+                        <div class="todotime">
+                            {{ item.created_at }}
+                        </div> 
+                        <div class="{% if item.is_done %} todocontent-line {% else %} todocontent {% endif %}">
+                            {{ item.todo_context }}
+                        </div>
+                    </div>
+                    <div class="deletedoto">
+                        <div class="form">
+                        <form method="POST" action="{% url 'deleteToDo' item.todo_id %}">
+                        {% csrf_token %}
+                            <button type="submit" class="delete-button">
+                                <img src="{% static 'todoapp/img/delete.svg' %}" alt="Delete" class="button-delete">
+                            </button>
+                        </form>
+                    </div>
+                    </div>                    
+                </div>
+               
+                {% endfor %}
+            </div>
+        </div>
+        <div class="addtodo">
+            <div class="text">
+                Add TODO
+            </div>
+            <div class="input">
+                <form method="POST" class="todo-form" action="{% url 'addToDo' %}">
+                    {% csrf_token %}
+                    <input type="todo" class="input{% if errors.todo %} input-error{% endif %}" id="todo" name="todo" required placeholder="Enter here your todo...">
+                    <button type="submit" class="image-button">
+                        <img src="{% static 'todoapp/img/plus.svg' %}" alt="Add" class="button-image">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="logout">
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="logout-button">
+            <div class="text">
+                Log Out
+            </div>
+        </button>
+    </form>
+</div>
+
+{% endblock %}

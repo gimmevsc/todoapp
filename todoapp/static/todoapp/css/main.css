@@ -1,0 +1,226 @@
+.main-page {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+.main-page .to-do-main {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  align-items: center;
+}
+.main-page .to-do-main .to-doapp-by {
+  width: 100%;
+  position: relative;
+  font-size: 35px;
+  font-weight: 800;
+  font-family: var(--font-gilroy);
+  color: #dfbd43;
+  text-align: center;
+  margin-bottom: 57px;
+}
+.main-page .to-do-main .search {
+  width: 50%;
+}
+.main-page .to-do-main .search .search-form .input {
+  width: 100%;
+  box-shadow: 0px 16px 24px rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  height: 55px;
+  padding: 10px 10px 10px 40px;
+  font-size: 20px;
+  background-image: url("../img/magnifing.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 20px;
+  font-family: var(--font-rubik);
+  color: rgba(0, 0, 0, 0.643);
+}
+.main-page .to-do-main .search .search-form .input:focus-visible {
+  background-color: rgba(223, 189, 67, 0.0862745098);
+}
+.main-page .to-do-main .search .search-form ::-moz-placeholder {
+  font-size: 18px;
+  font-family: var(--font-rubik);
+  color: rgba(0, 0, 0, 0.5);
+  height: 22px;
+}
+.main-page .to-do-main .search .search-form ::placeholder {
+  font-size: 18px;
+  font-family: var(--font-rubik);
+  color: rgba(0, 0, 0, 0.5);
+  height: 22px;
+}
+.main-page .to-do-main .todos {
+  max-height: 480px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.main-page .to-do-main .todos .todoitems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  max-width: 300px;
+  gap: 3px;
+  padding: 10px 13px;
+  border-radius: 20px;
+  border: 2px solid #dfbd43;
+  box-sizing: border-box;
+  min-height: 90px;
+  box-shadow: 0px 16px 24px rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background-color: #fff;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .checkbox {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-right: 12px;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .checkbox .done-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 25px;
+  height: 25px;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .content .todocontent {
+  width: 200px;
+  font-size: 17px;
+  font-family: var(--font-rubik);
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .content .todocontent-line {
+  width: 120px;
+  font-size: 17px;
+  font-family: var(--font-rubik);
+  color: rgb(0, 0, 0);
+  text-align: left;
+  height: 23.8px;
+  text-decoration: line-through;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .content .todotime {
+  width: 200px;
+  font-size: 14px;
+  font-family: var(--font-rubik);
+  color: rgba(0, 0, 0, 0.57);
+  text-align: left;
+  height: 18.8px;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .deletedoto {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .deletedoto .form .delete-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 25px;
+  height: 25px;
+}
+.main-page .to-do-main .todos .todoitems .dotoitem .deletedoto .form .delete-button .button-delete {
+  width: 25px;
+  height: 25px;
+}
+.main-page .to-do-main .addtodo {
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Change this to fixed */
+  bottom: 5px;
+  width: 300px;
+  padding: 10px; /* Optional: add some padding */
+}
+.main-page .to-do-main .addtodo .text {
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 800;
+  font-family: var(--font-gilroy);
+  color: #dfbd43;
+  text-align: center;
+}
+.main-page .to-do-main .addtodo .input .todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-page .to-do-main .addtodo .input .todo-form .input {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid #dfbd43;
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 16px 24px rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background-color: #fff;
+}
+.main-page .to-do-main .addtodo .input .todo-form .input:focus-visible {
+  background-color: rgba(223, 189, 67, 0.0862745098);
+}
+.main-page .to-do-main .addtodo .input .todo-form ::-moz-placeholder {
+  font-size: 16px;
+  font-family: var(--font-rubik);
+  color: rgba(0, 0, 0, 0.5);
+  height: 22px;
+}
+.main-page .to-do-main .addtodo .input .todo-form ::placeholder {
+  font-size: 16px;
+  font-family: var(--font-rubik);
+  color: rgba(0, 0, 0, 0.5);
+  height: 22px;
+}
+.main-page .to-do-main .addtodo .input .todo-form .image-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+.main-page .to-do-main .addtodo .input .todo-form .image-button .button-image {
+  width: 50px;
+  height: 50px;
+}
+
+.logout .logout-button {
+  box-shadow: var(--button-shadow);
+  border-radius: 15px;
+  background-color: #dfbd43;
+  position: absolute;
+  bottom: 1%;
+  right: 2%;
+  border: 0px;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 22px;
+  color: #fff;
+  font-family: var(--font-inter);
+  cursor: pointer;
+}
+.logout .logout-button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+.logout .logout-button .text {
+  font-size: 22px;
+  font-family: var(--font-inter);
+  color: #fff;
+  text-align: left;
+}/*# sourceMappingURL=main.css.map */

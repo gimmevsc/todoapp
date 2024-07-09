@@ -1,0 +1,241 @@
+.main-page{
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+
+    .to-do-main{
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        align-items: center;
+        .to-doapp-by{
+            width: 100%;
+            position: relative;
+            font-size: 35px;
+            font-weight: 800;
+            font-family: var(--font-gilroy);
+            color: #dfbd43;
+            text-align: center;
+            margin-bottom: 57px;
+        }
+        .search{
+            width: 50%;
+            .search-form{
+                .input{
+                    width: 100%;
+                    box-shadow: 0px 16px 24px rgba(255, 255, 255, 0.14);
+                    border-radius: 22px;
+                    background-color: #fff;
+                    border: 1px solid rgba(0, 0, 0, 0.4);
+                    box-sizing: border-box;
+                    height: 55px;
+                    padding: 10px 10px 10px 40px; 
+                    font-size: 20px;
+                    background-image: url('../img/magnifing.svg');
+                    background-repeat: no-repeat;
+                    background-position: 10px;
+                    background-size: 20px;
+                    font-family: var(--font-rubik);
+                    color: rgba(0, 0, 0, 0.643);
+                    &:focus-visible{
+                        background-color: #dfbd4316;
+                    }
+                }
+                ::placeholder {
+                    font-size: 18px;
+                    font-family: var(--font-rubik);
+                    color: rgba(0, 0, 0, 0.5);
+                    height: 22px;
+                }
+                
+            }
+        }
+        .todos{
+            max-height: 480px;
+            overflow-y: auto;
+            margin-top: 10px;
+
+            .todoitems{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 50px;
+                
+                .dotoitem{
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    max-width: 300px;
+                    gap: 3px;
+                    padding: 10px 13px;
+                    border-radius: 20px;
+                    border: 2px solid #dfbd43;
+                    box-sizing: border-box;
+                    min-height: 90px;
+                    box-shadow: 0px 16px 24px rgba(255, 255, 255, 0.14);
+                    border-radius: 22px;
+                    background-color: #fff;
+                    .checkbox{
+                        display: flex;
+                        justify-content: left;
+                        align-items: left;
+                        margin-right: 12px;
+                        .done-button{
+                            background-color: transparent;
+                            cursor: pointer;
+                            border: none; 
+                            width: 25px; 
+                            height: 25px;
+                        } 
+                    }
+                    .content{
+                        
+                        .todocontent{
+                            width: 200px;   
+                            font-size: 17px;
+                            font-family: var(--font-rubik);
+                            color: rgb(0, 0, 0);
+                            text-align: left;
+                        }
+                        .todocontent-line{
+                            width: 120px;
+                            font-size: 17px;
+                            font-family: var(--font-rubik);
+                            color: rgb(0, 0, 0);
+                            text-align: left;
+                            height: 23.8px;
+                            text-decoration: line-through;
+                        }
+                        .todotime{
+                            width: 200px;
+                            font-size: 14px;
+                            font-family: var(--font-rubik);
+                            color: rgba(0, 0, 0, 0.57);
+                            text-align: left;
+                            height: 18.8px;
+                        }
+                    }
+                    .deletedoto{
+                        display: flex;
+                        justify-content: right;
+                        align-items: right;
+                        .form{
+                            .delete-button{
+                                background-color: transparent;
+                                cursor: pointer;
+                                border: none; 
+                                width: 25px; 
+                                height: 25px;
+                                .button-delete{
+                                    width: 25px; 
+                                    height: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .addtodo{
+            display: flex;
+            flex-direction: column;
+            position: fixed; /* Change this to fixed */
+            bottom: 5px;
+            width: 300px;
+            // width: 100%; /* Ensure it spans the full width of the container */
+            // background-color: white; /* Optional: set a background color */
+            padding: 10px; /* Optional: add some padding */
+                // box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+            .text{
+                font-size: 30px;
+                margin-top: 10px;
+                font-weight: 800;
+                font-family: var(--font-gilroy);
+                color: #dfbd43;
+                text-align: center;
+            }
+            .input{
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: center;
+                // margin-top: 10px;
+               .todo-form{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .input{
+                        width: 100%;
+                        border-radius: 20px;
+                        border: 2px solid #dfbd43;
+                        box-sizing: border-box;
+                        height: 50px;
+                        font-size: 16px;
+                        padding: 15px;
+                        margin-bottom: 20px;
+                        box-shadow: 0px 16px 24px rgba(255, 255, 255, 0.14);
+                        border-radius: 22px;
+                        background-color: #fff;
+                        &:focus-visible{
+                            background-color: #dfbd4316;
+                        }
+                        
+                    }
+                    ::placeholder {
+                        font-size: 16px;
+                        font-family: var(--font-rubik);
+                        color: rgba(0, 0, 0, 0.5);
+                        height: 22px;
+                    }
+                    .error-input{
+                        
+                    }
+                    .image-button{
+                        background-color: transparent;
+                        cursor: pointer;
+                        border: none; 
+                        width: 50px; 
+                        height: 50px;
+                        .button-image{
+                            width: 50px; 
+                            height: 50px;
+                        }
+                    }
+               } 
+            }
+        }
+    }
+}
+.logout{
+    .logout-button{
+        box-shadow: var(--button-shadow);
+        border-radius: 15px;
+        background-color: #dfbd43;
+        position: absolute;
+        bottom: 1%;
+        right: 2%;
+        border: 0px;
+        padding: 14px 24px;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 22px;
+        color: #fff;
+        font-family: var(--font-inter);
+        cursor: pointer;
+        &:hover{
+            cursor: pointer;
+            background-color: black;
+        }
+        .text{
+
+            font-size: 22px;
+            font-family: var(--font-inter);
+            color: #fff;
+            text-align: left;
+            
+        }
+    }
+}
