@@ -8,8 +8,8 @@ def generate_code():
 
 
 def send_verification_code(email, code, email_goal, email_main):
-    sender_email = 'noreply.whispercode@gmail.com'
-    sender_password = 'jhbi pzln sxbo nozu'
+    sender_email = 'YOUR_EMAIL'
+    sender_password = 'PASSWORD'
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
     
