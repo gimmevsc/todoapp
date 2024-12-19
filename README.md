@@ -17,14 +17,18 @@ A simple ToDo application built with Django.
    ```bash
    pip install -r requirements.txt
 
-3. Generate a New Secret Key Create a new secret key for your application: 
+3. Set Up Environment Variables
+   Create a .env file in the project root by copying .env.example:
    ```bash
-   SECRET_KEY = 'your-generated-secret-key'
+   cp .env.example .env
+   ```
 
 4. Make Database Migrations Run the migrations to set up your database:
    ```bash
-   python manage.py migrate
+   python3 manage.py makemigrations todoapp
+
+   python3 manage.py migrate
 
 5. Start the Development Server Use the following command to run the development server:
    ```bash
-   python manage.py runserver
+   python3 manage.py runserver
