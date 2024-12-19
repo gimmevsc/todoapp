@@ -168,7 +168,7 @@ def addToDo(request):
         email = request.session.get('email')
         
         user = User.objects.get(email_address=email)
-        print(request.body)
+
         todo_context = request.POST.get('todo')
         
         if len(todo_context) < 1:

@@ -2,15 +2,23 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from random import randint
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+sender_email_env = os.getenv('SENDER_EMAIL')
+sender_password_env = ' '.join(os.getenv('SENDER_PASSWORD').split(','))
+smtp_server_env = os.getenv('SENDER_SMTP_SEVER')
 
 def generate_code():
     return str(str(randint(0,9))+str(randint(0,9))+str(randint(0,9))+str(randint(0,9))+str(randint(0,9))+str(randint(0,9)))
 
 
 def send_verification_code(email, code, email_goal, email_main):
-    sender_email = 'YOUR_EMAIL'
-    sender_password = 'PASSWORD'
-    smtp_server = 'smtp.gmail.com'
+    sender_email = sender_email_env
+    sender_password = sender_password_env
+    smtp_server = smtp_server_env
     smtp_port = 587
     
     with open('todoapp/email.html', 'r') as file:
